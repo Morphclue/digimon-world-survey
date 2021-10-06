@@ -40,3 +40,6 @@ vignettes/*.pdf
 
 # Idea-files
 .idea
+
+# Generated plots
+output
