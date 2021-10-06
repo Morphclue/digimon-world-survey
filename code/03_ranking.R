@@ -17,10 +17,10 @@ df[df == 5] <- 2
 
 df1 <- data.frame(as.matrix(colSums(df)))
 df1 <- rownames_to_column(df1, 'Hypothesen')
-names(df1)[2] <- 'Auswertung'
-df1$Hypothesen <- factor(df1$Hypothesen, levels = df1$Hypothesen[order(-df1$Auswertung)])
+names(df1)[2] <- 'Bewertung'
+df1$Hypothesen <- factor(df1$Hypothesen, levels = df1$Hypothesen[order(-df1$Bewertung)])
 
-p <- ggplot(df1, aes(x = Hypothesen, y = Auswertung))
+p <- ggplot(df1, aes(x = Hypothesen, y = Bewertung))
 
 p +
   geom_bar(
@@ -32,9 +32,9 @@ p +
   ) +
   theme_minimal() +
   theme(legend.position = 'None') +
-  labs(x = 'Auswertung', y = 'Hypothesen') +
+  labs(x = 'Hypothesen', y = 'Bewertung') +
   geom_text(
-    aes(x = Hypothesen, y = Auswertung, label = Auswertung),
+    aes(x = Hypothesen, y = Bewertung, label = Bewertung),
     position = position_dodge(width = 1),
     vjust = -0.5,
     size = 4,
