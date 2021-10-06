@@ -1,5 +1,5 @@
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load(pacman, rio, tidyverse, ggpubr, corrplot)
+pacman::p_load(pacman, rio, tidyverse, ggpubr)
 
 csv_df <- read.csv('data/results.csv')
 str(csv_df)
@@ -16,8 +16,9 @@ for (i in 4:20) {
 correlations <- round(cor(df, method = 'spearman'), digits = 4)
 correlations[abs(correlations) < 0.5 | correlations == 1] <- ''
 
-df$H11 <- round(jitter(df$H11, factor = 0.2), digits = 3)
-df$H12 <- round(jitter(df$H12, factor = 0.2), digits = 3)
+for (i in 1:20) {
+  df[, i] <- round(jitter(df[, i], factor = 0.2), digits = 3)
+}
 
 ggscatter(
   df,
