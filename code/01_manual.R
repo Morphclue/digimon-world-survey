@@ -1,4 +1,4 @@
-if (!require("pacman")) install.packages("pacman")
+if (!require('pacman')) install.packages('pacman')
 pacman::p_load(pacman, rio, tidyverse, ggplot2)
 
 csv_df <- read.csv('data/results.csv')
@@ -6,9 +6,9 @@ csv_df <- read.csv('data/results.csv')
 df <- data.frame(csv_df[8])
 str(df)
 names(df)[1] <- 'manual'
-df$manual[df$manual == 'No'] <- "Nein"
-df$manual[df$manual == 'Yes'] <- "Ja"
-df$manual[df$manual == 'I am not sure'] <- "Unbekannt"
+df$manual[df$manual == 'No'] <- 'Nein'
+df$manual[df$manual == 'Yes'] <- 'Ja'
+df$manual[df$manual == 'I am not sure'] <- 'Unbekannt'
 
 df1 <- df %>%
   select(manual) %>%

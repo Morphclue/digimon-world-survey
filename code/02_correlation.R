@@ -1,4 +1,4 @@
-if (!require("pacman")) install.packages("pacman")
+if (!require('pacman')) install.packages('pacman')
 pacman::p_load(pacman, rio, tidyverse, ggpubr, corrplot)
 
 csv_df <- read.csv('data/results.csv')
@@ -10,7 +10,7 @@ names(df)[2] <- 'overall'
 names(df)[3] <- 'combat'
 
 for (i in 4:20) {
-  names(df)[i] <- sprintf("H%s", i - 3)
+  names(df)[i] <- sprintf('H%s', i - 3)
 }
 
 correlations <- round(cor(df, method = 'spearman'), digits = 2)

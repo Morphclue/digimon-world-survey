@@ -1,4 +1,4 @@
-if (!require("pacman")) install.packages("pacman")
+if (!require('pacman')) install.packages('pacman')
 pacman::p_load(pacman, rio, tidyverse, ggplot2)
 
 csv_df <- read.csv('data/results.csv')
@@ -6,10 +6,10 @@ csv_df <- read.csv('data/results.csv')
 df <- data.frame(csv_df[4])
 str(df)
 names(df)[1] <- 'Geschlecht'
-df$Geschlecht[df$Geschlecht == 'Female'] <- "Weiblich"
-df$Geschlecht[df$Geschlecht == 'Male'] <- "Männlich"
-df$Geschlecht[df$Geschlecht == 'Non-binary'] <- "Nichtbinär"
-df$Geschlecht[df$Geschlecht == 'Prefer not to say'] <- "Keine Angabe"
+df$Geschlecht[df$Geschlecht == 'Female'] <- 'Weiblich'
+df$Geschlecht[df$Geschlecht == 'Male'] <- 'Männlich'
+df$Geschlecht[df$Geschlecht == 'Non-binary'] <- 'Nichtbinär'
+df$Geschlecht[df$Geschlecht == 'Prefer not to say'] <- 'Keine Angabe'
 
 df1 <- df %>%
   select(Geschlecht) %>%

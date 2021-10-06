@@ -1,4 +1,4 @@
-if (!require("pacman")) install.packages("pacman")
+if (!require('pacman')) install.packages('pacman')
 pacman::p_load(pacman, rio, tidyverse)
 
 csv_df <- read.csv('data/results.csv')
@@ -6,7 +6,7 @@ str(csv_df)
 
 df <- csv_df[, 14:30]
 for (i in 1:17) {
-  names(df)[i] <- sprintf("H%s", i)
+  names(df)[i] <- sprintf('H%s', i)
 }
 
 df[df == 1] <- -2
