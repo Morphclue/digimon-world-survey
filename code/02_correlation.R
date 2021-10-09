@@ -3,13 +3,10 @@ p_load(pacman, tidyverse, ggpubr, corrplot)
 
 csv_df <- read.csv('data/results.csv')
 
-df <- csv_df[, 11:30]
-names(df)[1] <- 'difficulty'
-names(df)[2] <- 'overall'
-names(df)[3] <- 'combat'
+df <- csv_df[, 14:30]
 
-for (i in 4:20) {
-  names(df)[i] <- sprintf('H%s', i - 3)
+for (i in 1:17) {
+  names(df)[i] <- sprintf('H%s', i)
 }
 
 correlations <- round(cor(df, method = 'spearman'), digits = 2)
