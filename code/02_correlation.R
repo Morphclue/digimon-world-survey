@@ -1,8 +1,7 @@
 if (!require('pacman')) install.packages('pacman')
-pacman::p_load(pacman, rio, tidyverse, ggpubr, corrplot)
+pacman::p_load(pacman, tidyverse, ggpubr, corrplot)
 
 csv_df <- read.csv('data/results.csv')
-str(csv_df)
 
 df <- csv_df[, 11:30]
 names(df)[1] <- 'difficulty'

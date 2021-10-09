@@ -1,8 +1,7 @@
 if (!require('pacman')) install.packages('pacman')
-pacman::p_load(pacman, rio, tidyverse)
+pacman::p_load(pacman, tidyverse)
 
 csv_df <- read.csv('data/results.csv')
-str(csv_df)
 
 df <- csv_df[, 14:30]
 for (i in 1:17) {

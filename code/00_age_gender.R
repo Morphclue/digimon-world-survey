@@ -1,10 +1,9 @@
 if (!require('pacman')) install.packages('pacman')
-pacman::p_load(pacman, rio, tidyverse, ggplot2)
+pacman::p_load(pacman, tidyverse, ggplot2)
 
 csv_df <- read.csv('data/results.csv')
 
 df <- data.frame(csv_df[3], csv_df[4])
-str(df)
 names(df)[1] <- 'Altersgruppe'
 names(df)[2] <- 'Geschlecht'
 df$Altersgruppe[df$Altersgruppe == 'Under 15'] <- '0-14'
