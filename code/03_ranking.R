@@ -1,5 +1,5 @@
 if (!require('pacman')) install.packages('pacman')
-pacman::p_load(pacman, tidyverse)
+p_load(pacman, tidyverse)
 
 csv_df <- read.csv('data/results.csv')
 
