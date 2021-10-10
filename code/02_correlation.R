@@ -14,7 +14,7 @@ corrplot(correlations, method = 'circle', type = 'upper')
 
 correlations[abs(correlations) < 0.5 | correlations == 1] <- ''
 
-for (i in 1:20) {
+for (i in 1:17) {
   df[, i] <- round(jitter(df[, i], factor = 0.3), digits = 3)
 }
 
