@@ -28,14 +28,3 @@ ggscatter(
   cor.method = 'spearman',
 ) +
   theme_minimal()
-
-ggscatter(
-  df,
-  x = 'H13',
-  y = 'H14',
-  add = 'reg.line',
-  conf.int = TRUE,
-  cor.coef = TRUE,
-  cor.method = 'spearman',
-) +
-  theme_minimal()
